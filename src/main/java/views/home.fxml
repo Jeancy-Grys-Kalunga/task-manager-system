@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="588.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeancygrys.taskmanager.views.HomeController">
+   <children>
+      <Pane layoutY="55.0" prefHeight="533.0" prefWidth="196.0" style="-fx-background-color: #3e10f5; -fx-background-radius: 0 60 0 0;">
+         <children>
+            <ImageView fitHeight="111.0" fitWidth="158.0" layoutX="12.0" layoutY="22.0" pickOnBounds="true" smooth="false" />
+            <Button alignment="BASELINE_LEFT" layoutX="13.0" layoutY="197.0" lineSpacing="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="170.0" styleClass="button1" stylesheets="@../../resources/assets/css/style.css" text="Mes tâches">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/bulleted_list_18px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Gill Sans MT" size="13.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" layoutX="13.0" layoutY="358.0" lineSpacing="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="170.0" styleClass="button1" stylesheets="@../../resources/assets/css/style.css" text="Paramètres">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/settings_3_filled_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Gill Sans MT" size="13.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" layoutX="13.0" layoutY="303.0" lineSpacing="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="170.0" styleClass="button1" stylesheets="@../../resources/assets/css/style.css" text="Terminées">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/task_completed_18px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Gill Sans MT" size="13.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" layoutX="13.0" layoutY="248.0" lineSpacing="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="170.0" styleClass="button1" stylesheets="@../../resources/assets/css/style.css" text="En cours">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/process_18px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Gill Sans MT" size="13.0" />
+               </font></Button>
+         </children>
+      </Pane>
+      <Pane layoutY="3.0" prefHeight="52.0" prefWidth="813.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="13.0" layoutY="12.0" prefHeight="28.0" prefWidth="781.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/check_all_30px.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Gestionnaire Des Tâches" textFill="#2a16ff">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="28.0" prefWidth="37.0" />
+                  <TextField prefHeight="26.0" prefWidth="260.0" promptText="Rechercher une tâche" styleClass="text" stylesheets="@../../resources/assets/css/style.css" />
+                  <Pane prefHeight="28.0" prefWidth="75.0" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/bell_20px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/help_20px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/assets/icons/settings_3_filled_50px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane layoutX="196.0" layoutY="55.0" prefHeight="200.0" prefWidth="614.0" />
+   </children>
+</AnchorPane>

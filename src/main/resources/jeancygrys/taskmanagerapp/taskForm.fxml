@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeancygrys.taskmanagerapp.TaskManagerController" style="-fx-background-color: #f8f9fc;">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 4);">
+            <children>
+                <!-- En-tête avec icône et titre -->
+                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" spacing="15">
+                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../assets/icons/task_filled_50px.png" />
+                        </image>
+                    </ImageView>
+                    <VBox spacing="0">
+                        <Label fx:id="formTitleLabel" text="Gestionnaire de tâches" textFill="#2a16ff">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="taskTUpdated" text="Nouvelle tâche" textFill="#505054">
+                            <font>
+                                <Font name="Segoe UI Light" size="14.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                </HBox>
+
+                <!-- Section Titre -->
+                <VBox alignment="TOP_LEFT" layoutX="30.0" layoutY="70.0" spacing="5">
+                    <Label text="QUE FAUT-IL FAIRE ?" style="-fx-text-fill: #5a5a5a; -fx-font-weight: bold;">
+                        <font>
+                            <Font name="Segoe UI" size="12.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="titleTextField" prefHeight="45.0" prefWidth="590.0" promptText="Entrez le titre de la tâche" 
+                               style="-fx-background-color: #f8f9fc; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 0 15;">
+                        <font>
+                            <Font name="Segoe UI" size="14.0" />
+                        </font>
+                    </TextField>
+                </VBox>
+
+                <!-- Section Description -->
+                <VBox alignment="TOP_LEFT" layoutX="30.0" layoutY="145.0" spacing="5">
+                    <Label text="DESCRIPTION" style="-fx-text-fill: #5a5a5a; -fx-font-weight: bold;">
+                        <font>
+                            <Font name="Segoe UI" size="12.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="descriptionTextArea" prefHeight="120.0" prefWidth="590.0" promptText="Décrivez la tâche en détail" 
+                              style="-fx-background-color: #f8f9fc; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 10;">
+                        <font>
+                            <Font name="Segoe UI" size="14.0" />
+                        </font>
+                    </TextArea>
+                </VBox>
+
+                <!-- Section Options (3 colonnes) -->
+                <HBox alignment="TOP_CENTER" layoutX="30.0" layoutY="295.0" prefHeight="150.0" prefWidth="590.0" spacing="20">
+                    <!-- Colonne Catégorie -->
+                    <VBox alignment="TOP_LEFT" prefWidth="180.0" spacing="5">
+                        <Label text="CATÉGORIE" style="-fx-text-fill: #5a5a5a; -fx-font-weight: bold;">
+                            <font>
+                                <Font name="Segoe UI" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="categoryComboBox" prefHeight="45.0" prefWidth="180.0" 
+                                  style="-fx-background-color: #f8f9fc; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1;">
+                        </ComboBox>
+                    </VBox>
+
+                    <!-- Colonne Priorité -->
+                    <VBox alignment="TOP_LEFT" prefWidth="180.0" spacing="5">
+                        <Label text="PRIORITÉ" style="-fx-text-fill: #5a5a5a; -fx-font-weight: bold;">
+                            <font>
+                                <Font name="Segoe UI" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="priorityComboBox" prefHeight="45.0" prefWidth="180.0" 
+                                  style="-fx-background-color: #f8f9fc; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1;">
+                        </ComboBox>
+                    </VBox>
+
+                    <!-- Colonne Statut -->
+                    <VBox alignment="TOP_LEFT" prefWidth="180.0" spacing="5">
+                        <Label text="STATUT" style="-fx-text-fill: #5a5a5a; -fx-font-weight: bold;">
+                            <font>
+                                <Font name="Segoe UI" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="statusComboxBox" prefHeight="45.0" prefWidth="180.0" 
+                                  style="-fx-background-color: #f8f9fc; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1;">
+                        </ComboBox>
+                    </VBox>
+                </HBox>
+
+                <!-- Section Date limite -->
+                <VBox alignment="TOP_LEFT" layoutX="30.0" layoutY="460.0" spacing="5">
+                    <Label text="DATE LIMITE" style="-fx-text-fill: #5a5a5a; -fx-font-weight: bold;">
+                        <font>
+                            <Font name="Segoe UI" size="12.0" />
+                        </font>
+                    </Label>
+                    <DatePicker fx:id="dateDueComboBox" prefHeight="45.0" prefWidth="590.0" 
+                                style="-fx-background-color: #f8f9fc; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-font-size: 14;">
+                    </DatePicker>
+                </VBox>
+
+                <!-- Boutons en bas -->
+                <HBox alignment="CENTER" layoutX="30.0" layoutY="540.0" prefHeight="60.0" prefWidth="590.0" spacing="30">
+                    <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#closeTaskForm" prefHeight="50.0" prefWidth="280.0" 
+                            style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #2a16ff; -fx-border-width: 1;" 
+                            text="Annuler" textFill="#2a16ff">
+                        <font>
+                            <Font name="Segoe UI Semibold" size="15.0" />
+                        </font>
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../assets/icons/cancel_20px.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    
+                    <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#storeTask" prefHeight="50.0" prefWidth="280.0" 
+                            style="-fx-background-color: #2a16ff; -fx-background-radius: 8; -fx-cursor: hand;" 
+                            text="Enregistrer" textFill="WHITE">
+                        <font>
+                            <Font name="Segoe UI Semibold" size="15.0" />
+                        </font>
+                        <effect>
+                            <DropShadow color="#2a16ff80" offsetX="0.0" offsetY="3.0" radius="5.0" />
+                        </effect>
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../assets/icons/save_20px.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </AnchorPane>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
