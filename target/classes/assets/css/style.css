@@ -1,0 +1,78 @@
+/* Style de base pour tous les boutons */
+.button1 {
+    -fx-background-color: #3e10f5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.button1:hover {
+    -fx-background-color: #2a00e0;
+}
+
+/* Boutons avec uniquement une icône */
+.button1.icon-only {
+    -fx-padding: 8;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+}
+
+/* Styles pour les HBox à l'intérieur des boutons */
+.button1 > HBox {
+    -fx-alignment: center-left;
+    -fx-spacing: 10;
+    -fx-padding: 0 5;
+}
+
+/* Styles pour les labels à l'intérieur des boutons */
+.button1 .label {
+    -fx-text-fill: white !important;
+    -fx-font-weight: bold;
+}
+
+/* Styles pour les badges de comptage */
+.notification-badge {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2px 5px;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+}
+
+.count-badge {
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 1px;
+}
+
+.completed-badge {
+    -fx-background-color: #4CAF50; /* Vert */
+}
+
+.inprogress-badge {
+    -fx-background-color: #2196F3; /* Bleu */
+}
+
+.late-badge {
+    -fx-background-color: #f44336; /* Rouge */
+}
+
+.text-input
+{
+    -fx-background-radius : 20;
+    -fx-text-fill : #A7B3C4;
+    -fx-prompt-text-fill : #D4CEE3;
+}
