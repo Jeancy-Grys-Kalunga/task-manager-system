@@ -92,8 +92,7 @@ public class TaskCategoryTableController {
                 new KeyFrame(Duration.minutes(1), event -> {
                     updateCounters();
                     checkForNewNotifications();
-                })
-        );
+                }));
         notificationTimeline.setCycleCount(Timeline.INDEFINITE);
         notificationTimeline.play();
     }
@@ -128,13 +127,11 @@ public class TaskCategoryTableController {
         categoryTableView.getColumns().clear();
 
         TableColumn<TaskCategoryTableModel, Integer> idColumn = new TableColumn<>("Id");
-        idColumn.setCellValueFactory(cellData
-                -> new SimpleIntegerProperty(cellData.getValue().getId()).asObject());
+        idColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getId()).asObject());
         idColumn.setPrefWidth(60);
 
         TableColumn<TaskCategoryTableModel, String> nameColumn = new TableColumn<>("Nom de la catégorie");
-        nameColumn.setCellValueFactory(cellData
-                -> new SimpleStringProperty(cellData.getValue().getName()));
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
         nameColumn.setPrefWidth(250);
 
         categoryTableView.getColumns().addAll(idColumn, nameColumn);
@@ -146,8 +143,7 @@ public class TaskCategoryTableController {
         for (TaskCategory category : categories) {
             TaskCategoryTableModel item = new TaskCategoryTableModel(
                     category.getId(),
-                    category.getName()
-            );
+                    category.getName());
             categoriesItems.add(item);
         }
         categoryTableView.setItems(categoriesItems);
@@ -261,7 +257,8 @@ public class TaskCategoryTableController {
                 if (response == ButtonType.OK) {
                     TaskCategory category = new TaskCategory(selectedCategory.getId(), selectedCategory.getName());
                     taskCategoryRepository.deleteCategory(category);
-                    helper.alert("Suppression réussie", "La catégorie " + selectedCategory.getName() + " a été supprimée", "success");
+                    helper.alert("Suppression réussie",
+                            "La catégorie " + selectedCategory.getName() + " a été supprimée", "success");
                     refreshData();
                 }
             });

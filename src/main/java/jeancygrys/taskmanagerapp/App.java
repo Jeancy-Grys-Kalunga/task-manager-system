@@ -13,17 +13,17 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application {
-     public static String currentTaskFilter;
+    public static String currentTaskFilter;
 
     private static Scene scene;
     private Db db = new Db();
 
     @Override
     public void start(Stage stage) throws IOException {
-      
+
         scene = new Scene(loadFXML("home"));
         stage.setScene(scene);
-        
+
         stage.show();
         db.getConnection();
     }

@@ -84,13 +84,12 @@ public class TaskManagerController implements Initializable {
         editingTask = null; // Initialiser à null
         initializedFormControl();
     }
-    
+
     public void setForNewTask() {
         resetTaskForm();
         formTitleLabel.setText("Création de tâche");
         taskTUpdated.setText("Nouvelle tâche");
     }
-    
 
     public void initializedFormControl() {
         statusComboxBox.getItems().addAll(TaskStatus.values());
@@ -238,7 +237,7 @@ public class TaskManagerController implements Initializable {
         helper.closeForm(event);
     }
 
-   @FXML
+    @FXML
     private void storeTask(MouseEvent event) {
         String title = titleTextField.getText();
         String description = descriptionTextArea.getText();
@@ -256,19 +255,20 @@ public class TaskManagerController implements Initializable {
                     editingTask.setCategory(category_task);
                     editingTask.setPriority(priority);
                     editingTask.setStatus(status);
-                    
+
                     taskRepository.updateTask(editingTask);
                     helper.alert("Mise à jour réussie", "Tâche mise à jour avec succès", "success");
                 } else {
                     Task task = new Task(0, title, description, dateDue, status, priority, category_task);
                     taskRepository.addTask(task);
-                    helper.alert("Enregistrement réussi", "La tâche " + title + " est enregistrée avec succès", "success");
+                    helper.alert("Enregistrement réussi", "La tâche " + title + " est enregistrée avec succès",
+                            "success");
                 }
-                
+
                 // Fermer le formulaire après enregistrement
                 Stage stage = (Stage) saveTaskButton.getScene().getWindow();
                 stage.close();
-                
+
             } catch (Exception ex) {
                 logger.info(ex.toString());
             }
