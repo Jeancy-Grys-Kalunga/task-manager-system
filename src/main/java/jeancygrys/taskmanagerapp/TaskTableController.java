@@ -108,8 +108,7 @@ public class TaskTableController {
                 new KeyFrame(Duration.minutes(1), event -> {
                     refreshData();
                     checkForNewNotifications();
-                })
-        );
+                }));
         notificationTimeline.setCycleCount(Timeline.INDEFINITE);
         notificationTimeline.play();
     }
@@ -173,7 +172,8 @@ public class TaskTableController {
         nameColumn.setPrefWidth(120);
 
         TableColumn<TaskTableModel, String> descriptionColumn = new TableColumn<>("Description");
-        descriptionColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDescription()));
+        descriptionColumn
+                .setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDescription()));
         descriptionColumn.setPrefWidth(250);
 
         TableColumn<TaskTableModel, String> categoryColumn = new TableColumn<>("Catégorie");
@@ -181,9 +181,8 @@ public class TaskTableController {
         categoryColumn.setPrefWidth(120);
 
         TableColumn<TaskTableModel, String> statusColumn = new TableColumn<>("Statut");
-        statusColumn.setCellValueFactory(cellData
-                -> new SimpleStringProperty(translateStatus(cellData.getValue().getStatus()))
-        );
+        statusColumn.setCellValueFactory(
+                cellData -> new SimpleStringProperty(translateStatus(cellData.getValue().getStatus())));
         statusColumn.setPrefWidth(75);
 
         statusColumn.setCellFactory(column -> new TableCell<TaskTableModel, String>() {
@@ -242,8 +241,7 @@ public class TaskTableController {
                     task.getDueDate().toString(),
                     task.getStatus().toString(),
                     task.getPriority().toString(),
-                    task.getCategory().getName()
-            );
+                    task.getCategory().getName());
             taskItems.add(item);
         }
         taskTableView.setItems(taskItems);
@@ -347,7 +345,8 @@ public class TaskTableController {
                     Task task = taskRepository.getTask(selectedTask.getId());
                     if (task != null) {
                         taskRepository.deleteTask(task);
-                        helper.alert("Suppression réussi", "La tâche " + selectedTask.getTitle() + " a été supprimée avec succès", "success");
+                        helper.alert("Suppression réussi",
+                                "La tâche " + selectedTask.getTitle() + " a été supprimée avec succès", "success");
                         refreshData();
                     }
                 }

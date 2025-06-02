@@ -161,18 +161,19 @@ public class HomeController implements Initializable {
             }
         });
 
-        TasksTableView.getColumns().addAll(titleColumn, descriptionColumn, categoryColumn, statusColumn, priorityColumn, due_DateColumn);
+        TasksTableView.getColumns().addAll(titleColumn, descriptionColumn, categoryColumn, statusColumn, priorityColumn,
+                due_DateColumn);
         TasksTableView.getSelectionModel().selectedItemProperty().addListener((obs, oldTask, newTask) -> {
-//            if(newTask != null){
-//                showTaskDetails(newTask);
-//            }
+            // if(newTask != null){
+            // showTaskDetails(newTask);
+            // }
         });
 
         refreshTasksTable();
 
     }
 
-//    
+    //
     private void refreshTasksTable() {
 
         try {
@@ -213,7 +214,5 @@ public class HomeController implements Initializable {
         stage.initStyle(StageStyle.UTILITY);
         stage.show();
     }
-
-   
 
 }

@@ -16,7 +16,7 @@ public class CategoryFormController {
     private TextField nameField;
     @FXML
     private Label formTitle;
-    
+
     private TaskCategoryRepository repository = new TaskCategoryRepository();
     private Helpers helper = new Helpers();
     private TaskCategory editingCategory;
@@ -35,12 +35,12 @@ public class CategoryFormController {
     @FXML
     private void saveCategory(MouseEvent event) {
         String name = nameField.getText().trim();
-        
+
         if (!Validator.validateCategoryForm(name)) {
             helper.alert("Erreur de validation", "Le nom de la catégorie est requis", "error");
             return;
         }
-        
+
         if (editingCategory == null) {
             // Création
             TaskCategory category = new TaskCategory(0, name);
@@ -52,7 +52,7 @@ public class CategoryFormController {
             repository.updateCategory(editingCategory);
             helper.alert("Succès", "Catégorie modifiée avec succès", "success");
         }
-        
+
         closeForm(event);
     }
 

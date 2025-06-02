@@ -22,7 +22,8 @@ public class TaskTableModel {
     private String category;
     private int id;
 
-    public TaskTableModel(int id, String title, String description, String dueDate, String status, String priority, String category) {
+    public TaskTableModel(int id, String title, String description, String dueDate, String status, String priority,
+            String category) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
